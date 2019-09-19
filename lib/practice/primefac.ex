@@ -1,8 +1,13 @@
 defmodule Practice.Primefac do
   def parse_int(text) do
     # Referred to elixir docs
-    {num, _} = Integer.parse(text)
-    num
+    cond do
+      is_integer(text) -> 
+        text
+      true ->
+        {num, _} = Integer.parse(text)
+        num    
+    end
   end
 
   def check_factor(num, factor, acc) do
@@ -15,7 +20,7 @@ defmodule Practice.Primefac do
     end
   end
 
-  def compute_primes(num, cur_factor, acc) when cur_factor < num/2 do
+  def compute_primes(num, cur_factor, acc) when cur_factor <= num/2 do
     IO.inspect(acc)
     IO.puts("hhhhhhhhhhhhhhhhhhhhhhhhhhh")
     cond do
