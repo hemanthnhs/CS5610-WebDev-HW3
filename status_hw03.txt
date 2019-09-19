@@ -1,0 +1,36 @@
+Please fill in answers to the questions below:
+
+
+1. What's your name?
+Hemanth Sai Nimmala
+
+2. What hostname did you deploy to?
+hw03.cs5610f19.website
+
+3. What's the URL of your git repo?
+https://github.com/hemanthnhs/CS5610-WebDev-HW3
+
+4. How much of the functionality did you complete?
+Completed full functionality mentioned
+
+5. Did you successfully deploy? If not, what's broken?
+Successfully deployed
+
+6. How comfortable do you feel with Elixir now?
+Not totally but could implement most of tasks
+
+7. Which parts of this assignment did you have trouble with, if any?
+Elixir pattern matching for calc
+Didn't know that it couldn't match pattern in middle of list
+
+
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Task 1
+ - Task 2
+ - Task 3
+ - Task 4
+ - Task 5
+ - Task 6
+ - Task 7
+ - Task 8
