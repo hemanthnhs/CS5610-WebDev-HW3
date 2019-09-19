@@ -2,8 +2,11 @@ server {
     listen 80;
     listen [::]:80;
 
+    # This is not the actual ngnix config
+    # The nginx config file is named as practice.cs5610f19.website
+
     # TODO: This should be your server name.
-    server_name practice.ironbeard.com;
+    server_name hw03.cs5610f19.website;
 
     location / {
         proxy_pass http://localhost:4790;
