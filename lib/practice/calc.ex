@@ -27,8 +27,8 @@ defmodule Practice.Calc do
   end
 
   def compute_higher_precidence(splts) do
-    IO.inspect splts
     case splts do
+        # Referred to https://elixirforum.com/t/easiest-pattern-match-for-first-two-elements-of-a-list-of-at-least-two-elements/707
         [{:num,num1},{:op,"/"},{:num,num2} | tail] -> compute_higher_precidence([{:num,num1/num2} | tail])
         [{:num,num1},{:op,"*"},{:num,num2} | tail] -> compute_higher_precidence([{:num,num1*num2} | tail])
         [h1, h2 | tail ] -> [h1] ++ [h2] ++ compute_higher_precidence(tail)
