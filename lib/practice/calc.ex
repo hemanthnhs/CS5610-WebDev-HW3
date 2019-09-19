@@ -20,9 +20,39 @@ defmodule Practice.Calc do
   end
 
   def compute(splts) do
+    splts
+    |> compute_div
+    |> compute_mul
+    |> compute_sub
+    |> compute_add
+  end
+
+  def compute_div(splts) do
     case splts do
-        [{:num,num1},{:op,"+"},{:num,num2} | tail] -> compute([{:num,num1+num2} | tail])
+        [{:num,num1},{:op,"/"},{:num,num2} | tail] -> compute_div([{:num,num1/num2} | tail])
+        _ -> splts
+    end
+  end
+
+  def compute_mul(splts) do
+    case splts do
+        [{:num,num1},{:op,"*"},{:num,num2} | tail] -> compute_mul([{:num,num1*num2} | tail])
+        _ -> splts
+    end
+  end
+
+  def compute_sub(splts) do
+    case splts do
+        [{:num,num1},{:op,"-"},{:num,num2} | tail] -> compute_sub([{:num,num1-num2} | tail])
+        _ -> splts
+    end
+  end
+
+  def compute_add(splts) do
+    case splts do
+        [{:num,num1},{:op,"+"},{:num,num2} | tail] -> compute_add([{:num,num1+num2} | tail])
         [{:num,res}] -> res
+        _ -> splts
     end
   end
 
