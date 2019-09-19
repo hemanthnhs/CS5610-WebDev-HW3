@@ -22,4 +22,9 @@ defmodule Practice do
   end
 
   # TODO: Add a palindrome? function.
+  def palindrome(x) do
+    # Referred https://hexdocs.pm/elixir/String.html
+    reversed  = String.reverse(x)
+    x == reversed
+  end
 end
