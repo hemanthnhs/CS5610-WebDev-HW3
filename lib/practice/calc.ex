@@ -6,7 +6,6 @@ defmodule Practice.Calc do
 
   def tag_token(expr) do
     # Referred to https://elixirschool.com/en/lessons/basics/control-structures/
-    IO.inspect expr
     case expr do
         n when n in ["+","-","*","/"] ->
             {:op,expr}
@@ -20,9 +19,10 @@ defmodule Practice.Calc do
     Enum.map(splts,fn(x) -> tag_token(x) end)
   end
 
-  def convert_to_postfix(splts) do
+  def compute(splts) do
     case splts do
-        [{:num,num1},{:op,"+"},{:num,num2} | tail] -> (num1+num2)
+        [{:num,num1},{:op,"+"},{:num,num2} | tail] -> compute([{:num,num1+num2} | tail])
+        [{:num,res}] -> res
     end
   end
 
@@ -32,7 +32,7 @@ defmodule Practice.Calc do
     expr
     |> String.split(~r/\s+/)
     |> tag_tokens
-    |> convert_to_postfix
+    |> compute
 
     # Hint:
     # expr
