@@ -23,7 +23,8 @@ defmodule Practice do
 
   def palindrome(x) do
     # Referred https://hexdocs.pm/elixir/String.html
-    reversed  = String.reverse(x)
-    x == reversed
+    dwn = String.downcase(x)
+    reversed  = String.reverse(dwn)
+    dwn == reversed
   end
 end
