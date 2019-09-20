@@ -2,8 +2,8 @@
   <div class="column">
     <p><%= link "← go back", to: "/" %></p>
     <h2>Palindrome</h2>
-
-    <p><%= @x %> is <%= if @y do %>a Palindrome <%= else %>not a Palindrome <%= end %></p>
+    <!-- Considering empty string as palindrome - Design decision -->
+    <p><%= @x %> is <%= if @y do %>a Palindrome <%= else %>not a Palindrome <% end %></p>
   </div>
 </div>
 

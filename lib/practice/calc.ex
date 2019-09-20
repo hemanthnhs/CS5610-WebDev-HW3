@@ -6,6 +6,7 @@ defmodule Practice.Calc do
 
   def tag_token(expr) do
     # Referred to https://elixirschool.com/en/lessons/basics/control-structures/
+    # and from the hint provided in homework
     case expr do
         n when n in ["+","-","*","/"] ->
             {:op,expr}
@@ -20,7 +21,7 @@ defmodule Practice.Calc do
   end
 
   def compute(splts) do
-    # IO.inspect 
+    # IO.inspect
     splts
     |> compute_higher_precidence
     |> compute_lower_precidence
@@ -29,6 +30,9 @@ defmodule Practice.Calc do
   def compute_higher_precidence(splts) do
     case splts do
         # Referred to https://elixirforum.com/t/easiest-pattern-match-for-first-two-elements-of-a-list-of-at-least-two-elements/707
+        # Understood the application of pattern matching from
+        # Attribution : Referred the pattern match line (line 35) from iElric/elixir-practice
+        # Referred to https://stackoverflow.com/questions/4073069/recursive-expression-evaluator-using-java
         [{:num,num1},{:op,"/"},{:num,num2} | tail] -> compute_higher_precidence([{:num,num1/num2} | tail])
         [{:num,num1},{:op,"*"},{:num,num2} | tail] -> compute_higher_precidence([{:num,num1*num2} | tail])
         [h1, h2 | tail ] -> [h1] ++ [h2] ++ compute_higher_precidence(tail)
@@ -37,6 +41,7 @@ defmodule Practice.Calc do
   end
 
   def compute_lower_precidence(splts) do
+    # Need not have other case here as only +, - expressions will reach here
     case splts do
         [{:num,num1},{:op,"-"},{:num,num2} | tail] -> compute_lower_precidence([{:num,num1-num2} | tail])
         [{:num,num1},{:op,"+"},{:num,num2} | tail] -> compute_lower_precidence([{:num,num1+num2} | tail])
