@@ -6,7 +6,7 @@
 	
 	Website is available at http://hw03.cs5610f19.website
 
-# Practice Instructions
+# Local Deployment/Server Running Instructions
 
 To start your Phoenix server:
 
