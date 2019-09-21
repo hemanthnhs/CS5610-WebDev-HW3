@@ -3,7 +3,7 @@
     <p><%= link "← go back", to: "/" %></p>
     <h2>Factors</h2>
 
-    <p><%= if @y==[] do %><%= @x %> does not have prime factors <%= else %><%= @x %> prime factors are <%= Enum.join(@y,", ") %><% end %></p>
+    <p><%= if @y==[] do %><%= @x %> does not have prime factors <% else %><%= @x %> prime factors are <%= Enum.join(@y,", ") %><% end %></p>
   </div>
 </div>
 

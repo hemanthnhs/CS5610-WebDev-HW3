@@ -33,7 +33,7 @@ defmodule Practice.Primefac do
     end
   end
 
-  def compute_primes(num, cur_factor, acc) do
+  def compute_primes(num, _cur_factor, acc) do
     # When current factor becomes greater than num/2, if num still remained append and return else return
     # breaking condition
     cond do

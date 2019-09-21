@@ -3,7 +3,7 @@
     <p><%= link "← go back", to: "/" %></p>
     <h2>Palindrome</h2>
     <!-- Considering empty string as palindrome - Design decision -->
-    <p><%= @x %> is <%= if @y do %>a Palindrome <%= else %>not a Palindrome <% end %></p>
+    <p><%= @x %> is <%= if @y do %>a Palindrome <% else %>not a Palindrome <% end %></p>
   </div>
 </div>
 
